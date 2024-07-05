@@ -90,4 +90,8 @@ export class KorisnikService {
   odbijZahtev(kor_ime: string) {
     return this.http.post(`${this.uri_gost}/odbijZahtev`, { kor_ime: kor_ime });
   }
+
+  dohvatiBrojGostiju() {
+    return this.http.get<number>(`${this.uri_gost}/dohvatiBrojGostiju`);
+  }
 }

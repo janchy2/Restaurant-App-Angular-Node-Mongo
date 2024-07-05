@@ -2,11 +2,10 @@ import * as express from "express";
 import Restoran from "../models/restoran";
 import Rezervacija from "../models/rezervacija";
 import { ObjectId } from "mongodb";
-import rezervacija from "../models/rezervacija";
 
 export class RezervacijaController {
 
-    async dostupnostStolova(req: express.Request, res: express.Response): Promise<any> {
+    dostupnostStolova = async (req: express.Request, res: express.Response) => {
         const restoranId = req.body.restoranId;
         const datum = req.body.datum;
         const vreme = req.body.vreme;
@@ -48,7 +47,7 @@ export class RezervacijaController {
             };
         });
 
-        return res.json(dostupnost);
+        res.json(dostupnost);
     }
 
     dodajRezervaciju = (req: express.Request, res: express.Response) => {
@@ -312,5 +311,47 @@ export class RezervacijaController {
         }));
 
         res.json(rezultat);
+    };
+
+    dohvatiRezervacijeDan = (req: express.Request, res: express.Response) => {
+        let pocetni_datum = new Date();
+        pocetni_datum = new Date(pocetni_datum.getTime() - 24 * 60 * 60 * 1000);
+        Rezervacija.find({
+            prihvacena: true,
+            otkazana: false,
+            datum: { $gte: pocetni_datum, $lte: new Date() }
+        }).then((rezervacije) => {
+            res.json(rezervacije.length);
+        }).catch((err) => {
+            console.log(err);
+        });
+    };
+
+    dohvatiRezervacijeNedelja = (req: express.Request, res: express.Response) => {
+        let pocetni_datum = new Date();
+        pocetni_datum = new Date(pocetni_datum.getTime() - 7 * 24 * 60 * 60 * 1000);
+        Rezervacija.find({
+            prihvacena: true,
+            otkazana: false,
+            datum: { $gte: pocetni_datum, $lte: new Date() }
+        }).then((rezervacije) => {
+            res.json(rezervacije.length);
+        }).catch((err) => {
+            console.log(err);
+        });
+    };
+
+    dohvatiRezervacijeMesec = (req: express.Request, res: express.Response) => {
+        let pocetni_datum = new Date();
+        pocetni_datum.setMonth(pocetni_datum.getMonth() - 1);
+        Rezervacija.find({
+            prihvacena: true,
+            otkazana: false,
+            datum: { $gte: pocetni_datum, $lte: new Date() }
+        }).then((rezervacije) => {
+            res.json(rezervacije.length);
+        }).catch((err) => {
+            console.log(err);
+        });
     };
 }

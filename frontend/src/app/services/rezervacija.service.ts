@@ -114,4 +114,16 @@ export class RezervacijaService {
   statistika3() {
     return this.http.get<any[]>(`${this.uri}/statistika3`);
   }
+
+  dohvatiRezervacijeDan() {
+    return this.http.get<number>(`${this.uri}/dohvatiRezervacijeDan`);
+  }
+
+  dohvatiRezervacijeNedelja() {
+    return this.http.get<number>(`${this.uri}/dohvatiRezervacijeNedelja`);
+  }
+
+  dohvatiRezervacijeMesec() {
+    return this.http.get<number>(`${this.uri}/dohvatiRezervacijeMesec`);
+  }
 }

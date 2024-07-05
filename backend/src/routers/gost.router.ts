@@ -15,4 +15,7 @@ gostRouter.route("/prihvatiZahtev").post((req, res) => new GostController().prih
 
 gostRouter.route("/odbijZahtev").post((req, res) => new GostController().odbijZahtev(req, res))
 
+gostRouter.route("/dohvatiBrojGostiju").get((req, res) => new GostController().dohvatiBrojGostiju(req, res))
+
+
 export default gostRouter;

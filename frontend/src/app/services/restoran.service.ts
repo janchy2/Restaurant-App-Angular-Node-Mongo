@@ -44,4 +44,12 @@ export class RestoranService {
     }
     return this.http.post(`${this.uri}/dodajOcenu`, podaci);
   }
+
+  dohvatiBrojRestorana() {
+    return this.http.get<number>(`${this.uri}/dohvatiBrojRestorana`);
+  }
+
+  dohvatiRestoraneSaKonobarima() {
+    return this.http.get<any[]>(`${this.uri}/dohvatiRestoraneSaKonobarima`);
+  }
 }

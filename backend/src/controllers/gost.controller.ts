@@ -76,4 +76,13 @@ export class GostController {
       });
   };
 
+  dohvatiBrojGostiju = (req: express.Request, res: express.Response) => {
+    Korisnik.find({ tip: 'G', prihvacen: true }).then((gosti) => {
+      res.json(gosti.length);
+    })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
 }

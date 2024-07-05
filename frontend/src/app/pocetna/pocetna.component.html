@@ -3,3 +3,27 @@
 <input type="button" value="Prijavi se" (click)="prijaviSe()">
 <br>
 <input type="button" value="Registruj se" (click)="registrujSe()">
+<p>Ukupan broj restorana: {{broj_restorana}}</p>
+<p>Ukupan broj registrovanih gostiju: {{broj_gostiju}}</p>
+<p>Broj rezervacija u poslednja 24 časa: {{rezervacije_dan}}</p>
+<p>Broj rezervacija u poslednjih 7 dana: {{rezervacije_nedelja}}</p>
+<p>Broj rezervacija u poslednjih mesec dana: {{rezervacije_mesec}}</p>
+<h2>Restorani</h2>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Tip</th>
+        <th>Adresa</th>
+        <th>Konobari</th>
+    </tr>
+    <tr *ngFor="let restoran of lista">
+        <td>{{restoran.naziv}}</td>
+        <td>{{restoran.tip}}</td>
+        <td>{{restoran.adresa}}</td>
+        <td>
+            <ul *ngFor="let konobar of restoran.konobari">
+                <li>{{konobar.ime}} {{konobar.prezime}}</li>
+            </ul>
+        </td>
+    </tr>
+</table>

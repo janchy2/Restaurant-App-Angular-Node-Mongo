@@ -59,4 +59,55 @@ export class RestoranController {
                 console.log(err);
             });
     };
+
+    dohvatiBrojRestorana = (req: express.Request, res: express.Response) => {
+        Restoran.find({}).then((restorani) => {
+            res.json(restorani.length);
+        }).catch((err) => {
+            console.log(err);
+        });
+    };
+
+    dohvatiRestoraneSaKonobarima = async (req: express.Request, res: express.Response) => {
+        const rezultat = await Restoran.aggregate([
+            {
+                $lookup: {
+                    from: 'korisnici',
+                    localField: '_id',
+                    foreignField: 'restoran',
+                    as: 'konobari'
+                }
+            },
+            {
+                $project: {
+                    naziv: 1,
+                    adresa: 1,
+                    tip: 1,
+                    konobari: {
+                        $filter: {
+                            input: '$konobari',
+                            as: 'konobar',
+                            cond: { $eq: ['$$konobar.tip', 'K'] }
+                        }
+                    }
+                }
+            },
+            {
+                $project: {
+                    naziv: 1,
+                    adresa: 1,
+                    tip: 1,
+                    konobari: {
+                        $map: {
+                            input: '$konobari',
+                            as: 'konobar',
+                            in: { ime: '$$konobar.ime', prezime: '$$konobar.prezime' }
+                        }
+                    }
+                }
+            }
+        ]);
+
+        res.json(rezultat);
+    };
 }

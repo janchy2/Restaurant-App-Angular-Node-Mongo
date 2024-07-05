@@ -41,5 +41,11 @@ rezervacijaRouter.route("/statistika2").post((req, res) => new RezervacijaContro
 
 rezervacijaRouter.route("/statistika3").get((req, res) => new RezervacijaController().statistika3(req, res))
 
+rezervacijaRouter.route("/dohvatiRezervacijeDan").get((req, res) => new RezervacijaController().dohvatiRezervacijeDan(req, res))
+
+rezervacijaRouter.route("/dohvatiRezervacijeNedelja").get((req, res) => new RezervacijaController().dohvatiRezervacijeNedelja(req, res))
+
+rezervacijaRouter.route("/dohvatiRezervacijeMesec").get((req, res) => new RezervacijaController().dohvatiRezervacijeMesec(req, res))
+
 
 export default rezervacijaRouter;
