@@ -1,0 +1,15 @@
+<h2>Biranje stola preko interaktivnog panela</h2>
+<p>Izaberite sto klikom na željeni (beli stolovi su slobodni) </p>
+<canvas #canvasElement class="bordered-canvas" width="500" height="300" (click)="klikNaKanvas($event)"></canvas>
+<table *ngIf="izabran_sto == true">
+    <tr>
+        <td>Broj osoba:</td>
+        <td><input type="number" [(ngModel)]="rezervacija.mesta" name="mesta"></td>
+    </tr>
+    <tr>
+        <td colspan='2'>
+            <input type='button' value='Pošalji zahtev za rezervaciju' (click)='zahtevPanel()'>
+        </td>
+    </tr>
+</table>
+<div class="greske">{{this.greske}}</div>

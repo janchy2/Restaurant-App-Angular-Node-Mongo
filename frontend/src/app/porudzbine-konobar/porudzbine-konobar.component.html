@@ -1,0 +1,28 @@
+<h1>Dostave</h1>
+<hr>
+<br>
+<table>
+    <tr *ngFor="let porudzbina of porudzbine">
+    <td>{{porudzbina.ime_korisnika}},</td>
+    <td>{{porudzbina.adresa_korisnika}},</td>
+    <td>{{porudzbina.datum_formatiran}}</td>
+    <td>
+        <ul *ngFor="let jelo of porudzbina.jela">
+            <li>
+                {{jelo.naziv}} ({{jelo.kolicina}})
+            </li>
+        </ul>
+    </td>
+    <td>ukupno - {{porudzbina.cena}} din</td>
+    <td><button (click)="prihvati(porudzbina)">Prihvati</button></td>
+    <td><button (click)="odbij(porudzbina)">Odbij</button></td>
+    <td *ngIf="porudzbina.za_prihvatanje"> Procenjeno vreme dostave
+        <select [(ngModel)]='porudzbina.procenjeno_vreme'>
+            <option value="20-30">20-30 min</option>
+            <option value="30-40">30-40 min</option>
+            <option value="50-60">50-60 min</option>
+        </select>
+    </td>
+    <td *ngIf="porudzbina.za_prihvatanje"><button (click)="potvrdi(porudzbina)">Potvrdi</button></td>
+    </tr>
+</table>

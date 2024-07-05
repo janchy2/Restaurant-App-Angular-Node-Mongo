@@ -1,0 +1,52 @@
+<h1>Promena lozinke</h1>
+<hr>
+<br>
+<form *ngIf="ulogovan == true">
+    <table>
+        <tr>
+            <td>Stara lozinka</td>
+            <td>
+                <input type='password' name='lozinka' [(ngModel)]='lozinka'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='button' value='Dalje' (click)='daljeZnam()'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <a href="#" (click)="zaboravljenaLozinka($event)">Zaboravljena lozinka?</a>
+            </td>
+        </tr>
+    </table>
+</form>
+<form *ngIf="ulogovan == false">
+    <table>
+        <tr *ngIf="dobro_ime == false">
+            <td>Korisničko ime</td>
+            <td>
+                <input type='text' name='kor_ime' [(ngModel)]='kor_ime'>
+            </td>
+        </tr>
+        <tr *ngIf="dobro_ime == true">
+            <td>Pitanje</td>
+            <td>
+                {{korisnik.pitanje}}
+            </td>
+        </tr>
+        <tr *ngIf="dobro_ime == true">
+            <td>Odgovor</td>
+            <td>
+                <input type='text' name='odgovor' [(ngModel)]='odgovor'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='button' value='Dalje' (click)='daljeNeZnam()'>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<div class="greske">{{this.greske}}</div>

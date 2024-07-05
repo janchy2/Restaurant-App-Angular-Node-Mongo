@@ -1,0 +1,26 @@
+<h1>Prijava</h1>
+<hr>
+<br>
+<form>
+    <table>
+        <tr>
+            <td>Korisničko ime</td>
+            <td>
+                <input type='text' name='kor_ime' [(ngModel)]='kor_ime'>
+            </td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+            <td>
+                <input type='password' name='lozinka' [(ngModel)]='lozinka'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='button' value='Prijavi se' (click)='prijava()'>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<div class="greske">{{this.greske}}</div>

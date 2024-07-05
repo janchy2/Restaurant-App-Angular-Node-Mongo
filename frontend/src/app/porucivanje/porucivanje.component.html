@@ -1,0 +1,34 @@
+<h1>Jelovnik za restoran {{restoran.naziv}}</h1>
+<h4>{{restoran.adresa}}</h4>
+<hr>
+<br>
+<button (click)="pregledKorpe()" *ngIf="pregled == false">Pregledaj korpu</button>
+<div *ngIf="pregled == true">
+    <h4>Korpa</h4>
+    <p *ngIf="porudzbina.jela.length == 0">Korpa je prazna!</p>
+    <table>
+        <tr *ngFor="let jelo of porudzbina.jela">
+            <td>{{jelo.naziv}}</td>
+            <td>{{jelo.kolicina}} * {{jelo.cena}} din = {{jelo.ukupno}} din</td>
+            <td><button (click)="uvecaj(jelo)">Uvećaj količinu</button></td>
+            <td><button (click)="smanji(jelo)">Smanji količinu</button></td>
+            <td><button (click)="ukloni(jelo)">Ukloni</button></td>
+        </tr>
+    </table>
+    <br>
+    <button (click)="zavrsi()">Završi porudžbinu</button>
+    <button (click)="zatvoriPregled()">Zatvori pregled</button>
+</div>
+<table>
+    <tr *ngFor="let jelo of restoran.jelovnik">
+        <td>{{jelo.naziv}}</td>
+        <td><ul *ngFor="let sastojak of jelo.sastojci">
+            <li>{{sastojak}}</li>
+        </ul></td>
+        <td><img [src]="jelo.slika" class="small-image"></td>
+        <td>{{jelo.cena}} din</td>
+        <td>količina</td>
+        <td><input type="number" name='kolicina' [(ngModel)]='jelo.kolicina' style="width: 50px;"></td>
+        <td><button (click)="dodajUKorpu(jelo)">Dodaj u korpu</button></td>
+    </tr>
+</table>

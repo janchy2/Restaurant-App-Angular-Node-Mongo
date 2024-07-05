@@ -1,0 +1,95 @@
+<h1 *ngIf="admin_pregled == false">Moj profil</h1>
+<h1 *ngIf="admin_pregled == true">Pregled korisnika</h1>
+<hr>
+<br>
+<table>
+    <tr>
+        <td>Ime</td>
+        <td>
+            {{korisnik.ime}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('ime')">
+        </td>
+    </tr>
+    <tr>
+        <td>Prezime</td>
+        <td>
+            {{korisnik.prezime}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('prezime')">
+        </td>
+    </tr>
+    <tr>
+        <td>Adresa</td>
+        <td>
+            {{korisnik.adresa}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('adresa')">
+        </td>
+    </tr>
+    <tr>
+        <td>Kontakt telefon</td>
+        <td>
+            {{korisnik.telefon}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('telefon')">
+        </td>
+    </tr>
+    <tr>
+        <td>I-mejl adresa</td>
+        <td>
+            {{korisnik.mejl}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('mejl')">
+        </td>
+    </tr>
+    <tr *ngIf="korisnik.tip == 'G'">
+        <td>Broj kreditne kartice</td>
+        <td>
+            {{korisnik.broj_kartice}}
+        </td>
+        <td>
+            <input type="button" value="Ažuriraj" (click)="azuriraj('broj_kartice')">
+        </td>
+    </tr>
+</table>
+<div>
+    <img [src]="korisnik.slika">
+</div>
+<p><input type="button" value="Ažuriraj profilnu" (click)="azurirajProfilnu()"></p>
+<hr>
+<table *ngIf="za_azuriranje_poruka != ''">
+    <tr>
+        <td>Unesite {{za_azuriranje_poruka}}</td>
+        <td>
+            <input type='text' name='novo' [(ngModel)]='novo'>
+        </td>
+        <td>
+            <input type="button" value="Sačuvaj promene" (click)="sacuvaj()">
+        </td>
+    </tr>
+</table>
+<table *ngIf="za_azuriranje == 'slika'">
+    <tr>
+        <td>Unesite novu profilnu</td>
+        <td>
+            <input type="file" name="slika" (change)="unetaSlika($event)" accept="image/*">
+        </td>
+        <td>
+            <input type="button" value="Sačuvaj promene" (click)="sacuvajSliku()">
+        </td>
+    </tr>
+    <tr>
+        <td>Uklonite trenutnu profilnu</td>
+        <td>
+            <input type="button" value="Ukloni" (click)="ukloniSliku()">
+        </td>
+    </tr>
+</table>
+<hr>
+<div class="greske">{{this.greske}}</div>

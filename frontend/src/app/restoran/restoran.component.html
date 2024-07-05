@@ -1,0 +1,92 @@
+<h1>Pregled restorana</h1>
+<hr>
+<br>
+<table>
+    <tr>
+        <td>Naziv</td>
+        <td>
+            {{restoran.naziv}}
+        </td>
+    </tr>
+    <tr>
+        <td>Adresa</td>
+        <td>
+            {{restoran.adresa}}
+        </td>
+    </tr>
+    <tr>
+        <td>Tip</td>
+        <td>
+            {{restoran.tip}}
+        </td>
+    </tr>
+    <tr>
+        <td>Kontakt telefon</td>
+        <td>
+            {{restoran.telefon}}
+        </td>
+    </tr>
+    <tr>
+        <td>Kontakt osoba</td>
+        <td>
+            {{restoran.kontakt_osoba}}
+        </td>
+    </tr>
+</table>
+<hr>
+<div class="map-container">
+    <div id="map" style="height: 400px;"></div>
+</div>
+
+<div *ngIf="korisnik.tip == 'G' && restoran.radno_vreme != ''">
+    <h3>Rezerviši sto</h3>
+    <button (click)="rezervisiForma()">Rezerviši preko forme</button>
+    <button (click)="rezervisiPanel()">Rezerviši preko interaktivnog panela</button>
+    <form *ngIf="nacin_rezervacije == 'forma'">
+        <table>
+            <tr>
+                <td>Datum:</td>
+                <td><input type="date" id="datum" [(ngModel)]="rezervacija.datum" name="datum"></td>
+            </tr>
+            <tr>
+                <td>Vreme:</td>
+                <input type="time" id="vreme" [(ngModel)]="rezervacija.vreme" name="vreme">
+            </tr>
+            <tr>
+                <td>Broj osoba:</td>
+                <input type="number" [(ngModel)]="rezervacija.mesta" name="mesta">
+            </tr>
+            <tr>
+                <td>Dodatni zahtevi:</td>
+                <textarea id="zahtevi" name="zahtevi" [(ngModel)]="rezervacija.zahtevi" rows="5" cols="40"></textarea>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <input type='button' value='Pošalji zahtev za rezervaciju' (click)='zahtevForma()'>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div *ngIf="nacin_rezervacije == 'panel'">
+        <table>
+            <tr>
+                <td>Datum:</td>
+                <td><input type="date" id="datum" [(ngModel)]="rezervacija.datum" name="datum"></td>
+            </tr>
+            <tr>
+                <td>Vreme:</td>
+                <input type="time" id="vreme" [(ngModel)]="rezervacija.vreme" name="vreme">
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <input type='button' value='Dalje' (click)='izabranDatum()'>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div *ngIf="korisnik.tip == 'G'">
+<h3>Pregledaj jelovnik i naruči na kućnu adresu</h3>
+<button (click)="jelovnik()">Otvori jelovnik</button>
+</div>
+<div class="greske">{{this.greske}}</div>

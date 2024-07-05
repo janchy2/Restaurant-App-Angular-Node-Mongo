@@ -1,0 +1,48 @@
+<h1>Pregled gostiju, konobara i restorana</h1>
+<hr>
+<br>
+<h2>Gosti</h2>
+<table>
+    <tr *ngFor="let gost of gosti">
+        <td>{{ gost.kor_ime }}</td>
+        <td><button (click)="pregled(gost)">Pregled</button></td>
+        <td *ngIf="gost.aktivan == true"><button (click)="deaktiviraj(gost)">Deaktiviraj</button></td>
+        <td *ngIf="gost.aktivan == false"><button (click)="odblokiraj(gost)">Odblokiraj</button></td>
+    </tr>
+</table>
+
+<h2>Konobari</h2>
+<table>
+    <tr *ngFor="let konobar of konobari">
+        <td>{{ konobar.kor_ime }}</td>
+        <td><button (click)="pregled(konobar)">Pregled</button></td>
+        <td><button (click)="deaktiviraj(konobar)">Deaktiviraj</button></td>
+        <td><button (click)="odblokiraj(konobar)">Odblokiraj</button></td>
+    </tr>
+</table>
+
+<h2>Restorani</h2>
+<table>
+    <tr *ngFor="let restoran of restorani">
+        <td>{{ restoran.naziv }}</td>
+        <td><button (click)="pregledRestorana(restoran)">Pregled</button></td>
+        <td *ngIf="!restoran.radno_vreme"><button (click)="otvoriFormu(restoran)">Dodaj radno vreme kuhinje</button>
+        </td>
+        <td *ngIf="restoran.dodaj_vreme">
+            <table>
+                <tr *ngFor="let dan of radno_vreme">
+                    <td>{{ dan.dan }}</td>
+                    <td>
+                        <input type="time" [(ngModel)]="dan.otvara">
+                        <input type="time" [(ngModel)]="dan.zatvara">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <input type='button' value='Dodaj' (click)='dodajRadnoVreme(restoran)'>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,36 @@
+<h1>Moje rezervacije</h1>
+<hr>
+<br>
+<h2>Aktuelne rezervacije</h2>
+<table>
+    <tr *ngFor="let rezervacija of aktuelne">
+        <td>{{ rezervacija.formatiran_datum }},</td>
+        <td>{{ rezervacija.vreme }},</td>
+        <td>{{rezervacija.naziv_restorana}},</td>
+        <td>{{rezervacija.adresa_restorana}}</td>
+        <td *ngIf="rezervacija.moze_otkazivanje"><button (click)="otkazi(rezervacija)">Otkaži</button></td>
+    </tr>
+</table>
+
+<h2>Istekle rezervacije</h2>
+<table>
+    <tr *ngFor="let rezervacija of istekle">
+        <td>{{ rezervacija.formatiran_datum }},</td>
+        <td>{{ rezervacija.vreme }},</td>
+        <td>{{rezervacija.naziv_restorana}}</td>
+        <td *ngIf="rezervacija.ocena > 0">ocena - {{rezervacija.ocena}}</td>
+        <td *ngIf="rezervacija.komentar != ''">komentar - {{rezervacija.komentar}}</td>
+        <td *ngIf="rezervacija.ocena == 0 && rezervacija.ispunjena == true"><button
+                (click)="oceni(rezervacija)">Oceni</button></td>
+        <td *ngIf="rezervacija.za_ocenjivanje == true">
+            <textarea [(ngModel)]="komentar" placeholder="Unesite komentar"></textarea>
+            <div class="star-rating">
+                <span *ngFor="let zvezdica of [1, 2, 3, 4, 5]" [class.filled]="zvezdica <= ocena"
+                    (click)="postaviOcenu(zvezdica)">
+                    &#9733;
+                </span>
+            </div>
+            <button (click)="posaljiOcenu(rezervacija)">Pošalji ocenu</button>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,13 @@
+<h1>Zahtevi za registraciju gostiju</h1>
+<hr>
+<br>
+<h2 *ngIf="ima_zahteva == true">Nepregledani zahtevi</h2>
+<table *ngIf="ima_zahteva == true">
+    <tr *ngFor="let gost of gosti">
+        <td>{{ gost.kor_ime }}</td>
+        <td><button (click)="pregled(gost)">Pregled</button></td>
+        <td><button (click)="prihvati(gost)">Prihvati</button></td>
+        <td><button (click)="odbij(gost)">Odbij</button></td>
+    </tr>
+</table>
+<p *ngIf="ima_zahteva == false">Trenutno nema nepregledanih zahteva!</p>

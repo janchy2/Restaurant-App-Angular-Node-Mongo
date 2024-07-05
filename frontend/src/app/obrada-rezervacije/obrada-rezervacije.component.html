@@ -1,0 +1,30 @@
+<h2>Obrada rezervacije</h2>
+<p *ngIf="rezervacija.x_stola != 0 && rezervacija.y_stola != 0">Željeni sto je žute boje (narandžaste ako već postoji rezervacija za njega) </p>
+<p *ngIf="rezervacija.x_stola == 0 && rezervacija.y_stola == 0">Izaberite sto preko panela (beli su slobodni) </p>
+<p>Broj osoba: {{rezervacija.mesta}}</p>
+<canvas #canvasElement class="bordered-canvas" width="500" height="300" (click)="klikNaKanvas($event)"></canvas>
+<br>
+<div *ngIf="rezervacija.x_stola == 0 && rezervacija.y_stola == 0">
+    <p>Ili izaberite sto preko liste</p>
+    <select name="selektovan_sto" [(ngModel)]="selektovan_sto" (ngModelChange)="izabranLista()">
+        <ng-container *ngFor="let sto of stolovi">
+            <option *ngIf="sto.rezervisan == false" [value]="sto.x">
+                mesta({{sto.mesta}}), x({{sto.x}}), y({{sto.y}})
+            </option>
+        </ng-container>
+    </select>
+</div>
+<br>
+<table>
+    <tr>
+        <td><input type='button' value='Prihvati' (click)='prihvati()'></td>
+        <td><input type='button' value='Odbij' (click)='odbij()'></td>
+    </tr>
+    <tr>
+        <td colspan="2">Razlog za odbijanje:</td>
+    </tr>
+    <tr>
+        <td colspan="2"><textarea name="razlog" [(ngModel)]="rezervacija.razlog" rows="5" cols="40"></textarea></td>
+    </tr>
+</table>
+<div class="greske">{{this.greske}}</div>

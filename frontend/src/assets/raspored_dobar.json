@@ -1,0 +1,74 @@
+{
+    "raspored": [
+        {
+            "tip": "sto",
+            "x": 180,
+            "y": 136.9250030517578,
+            "poluprecnik": 20,
+            "mesta": 4
+        },
+        {
+            "tip": "sto",
+            "x": 34,
+            "y": 40.92500305175781,
+            "poluprecnik": 20,
+            "mesta": 4
+        },
+        {
+            "tip": "sto",
+            "x": 25,
+            "y": 183.9250030517578,
+            "poluprecnik": 20,
+            "mesta": 4
+        },
+        {
+            "tip": "sto",
+            "x": 184,
+            "y": 45.92500305175781,
+            "poluprecnik": 20,
+            "mesta": 3
+        },
+        {
+            "tip": "sto",
+            "x": 255,
+            "y": 43.92500305175781,
+            "poluprecnik": 20,
+            "mesta": 3
+        },
+        {
+            "tip": "sto",
+            "x": 43,
+            "y": 259.9250030517578,
+            "poluprecnik": 20,
+            "mesta": 2
+        },
+        {
+            "tip": "sto",
+            "x": 127,
+            "y": 253.9250030517578,
+            "poluprecnik": 20,
+            "mesta": 2
+        },
+        {
+            "tip": "sto",
+            "x": 204,
+            "y": 249.9250030517578,
+            "poluprecnik": 20,
+            "mesta": 2
+        },
+        {
+            "tip": "toalet",
+            "x": 415,
+            "y": 19.125,
+            "sirina": 50,
+            "visina": 30
+        },
+        {
+            "tip": "kuhinja",
+            "x": 419,
+            "y": 203.125,
+            "sirina": 50,
+            "visina": 30
+        }
+    ]
+}

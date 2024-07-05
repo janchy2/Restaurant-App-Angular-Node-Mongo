@@ -1,0 +1,91 @@
+<h1>Registracija</h1>
+<hr>
+<br>
+<form>
+    <table>
+        <tr>
+            <td>Korisničko ime</td>
+            <td>
+                <input type='text' name='kor_ime' [(ngModel)]='kor_ime'>
+            </td>
+        </tr>
+        <tr>
+            <td>Lozinka</td>
+            <td>
+                <input type='password' name='lozinka' [(ngModel)]='lozinka'>
+            </td>
+        </tr>
+        <tr>
+            <td>Bezbednosno pitanje (u slučaju zaboravljene lozinke)</td>
+            <td>
+                <input type='text' name='pitanje' [(ngModel)]='pitanje'>
+            </td>
+        </tr>
+        <tr>
+            <td>Odgovor na bezbednosno pitanje</td>
+            <td>
+                <input type='text' name='odgovor' [(ngModel)]='odgovor'>
+            </td>
+        </tr>
+        <tr>
+            <td>Ime</td>
+            <td>
+                <input type='text' name='ime' [(ngModel)]='ime'>
+            </td>
+        </tr>
+        <tr>
+            <td>Prezime</td>
+            <td>
+                <input type='text' name='prezime' [(ngModel)]='prezime'>
+            </td>
+        </tr>
+        <tr>
+            <td>Pol</td>
+            <td>
+                <label>
+                    <input type="radio" name="pol" [(ngModel)]="pol" value="M" checked> M
+                </label>
+                <label>
+                    <input type="radio" name="pol" [(ngModel)]="pol" value="Z"> Ž
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Adresa</td>
+            <td>
+                <input type='text' name='adresa' [(ngModel)]='adresa'>
+            </td>
+        </tr>
+        <tr>
+            <td>Kontakt telefon</td>
+            <td>
+                <input type="tel" name="telefon" [(ngModel)]='telefon' placeholder="+381 #########">
+            </td>
+        </tr>
+        <tr>
+            <td>I-mejl adresa</td>
+            <td>
+                <input type="email" name="mejl" [(ngModel)]='mejl'>
+            </td>
+        </tr>
+        <tr>
+            <td>Profilna slika (nije obavezna)</td>
+            <td>
+                <input type="file" name="slika" (change)="unetaSlika($event)" accept="image/*">
+            </td>
+        </tr>
+        <tr>
+            <td>Broj kreditne kartice</td>
+            <td>
+                <input type="text" name="broj_kartice" placeholder="1234 5678 9012 3456" [(ngModel)]='broj_kartice'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='button' value='Registruj se' (click)='registracija()'>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<div class="greske">{{this.greske}}</div>

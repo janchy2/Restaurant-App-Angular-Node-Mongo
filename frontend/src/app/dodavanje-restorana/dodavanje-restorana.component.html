@@ -1,0 +1,78 @@
+<h1>Novi restoran</h1>
+<hr>
+<br>
+<form>
+    <table>
+        <tr>
+            <td>Naziv</td>
+            <td>
+                <input type='text' name='naziv' [(ngModel)]='restoran.naziv'>
+            </td>
+        </tr>
+        <tr>
+            <td>Tip</td>
+            <td>
+                <input type='text' name='tip' [(ngModel)]='restoran.tip'>
+            </td>
+        </tr>
+        <tr>
+            <td>Adresa</td>
+            <td>
+                <input type='text' name='adresa' [(ngModel)]='restoran.adresa'>
+            </td>
+        </tr>
+        <tr>
+            <td>Ime i prezime kontakt osobe</td>
+            <td>
+                <input type='text' name='kontakt_osoba' [(ngModel)]='restoran.kontakt_osoba'>
+            </td>
+        </tr>
+        <tr>
+            <td>Telefon kontakt osobe</td>
+            <td>
+                <input type="tel" name="telefon" [(ngModel)]='restoran.telefon' placeholder="+381 #########">
+            </td>
+        </tr>
+        <tr>
+            <td>I-mejl adresa kontakt osobe</td>
+            <td>
+                <input type="email" name="mejl" [(ngModel)]='restoran.mejl'>
+            </td>
+        </tr>
+        <tr>
+            <td>Kratak opis</td>
+            <td>
+                <textarea name="opis" [(ngModel)]="restoran.opis" rows="5" cols="40"></textarea>
+            </td>
+        </tr>
+    </table>
+    <p>Unesite JSON sa jelovnikom</p>
+    <input type="file" name="fajl" (change)="unetJelovnik($event)" accept=".json">
+    <br>
+    <p>Raspored stolova, kuhinja i toaleta</p>
+    <p>Nacrtajte raspored</p>
+    <canvas #canvasElement class="bordered-canvas" width="500" height="300" (click)="klikNaKanvas($event)"></canvas>
+    <br>
+    <table>
+        <tr>
+            <td>Tip elementa koji dodajete</td>
+            <td>
+                <select [(ngModel)]="tipElementa" name="tipElementa">
+                    <option value="sto">Sto</option>
+                    <option value="toalet">Toalet</option>
+                    <option value="kuhinja">Kuhinja</option>
+                </select>
+            </td>
+        </tr>
+        <tr *ngIf="tipElementa === 'sto'">
+            <td>Broj mesta za stolom</td>
+            <td><input type="number" [(ngModel)]="brojMesta" name="brojMesta" required></td>
+        </tr>
+    </table>
+    <p>Ili unesite JSON sa rasporedom</p>
+    <input type="file" name="fajl" (change)="unetJSON($event)" accept=".json">
+    <br>
+    <input type='button' value='Dodaj restoran' (click)='dodaj()'>
+</form>
+<hr>
+<div class="greske">{{this.greske}}</div>

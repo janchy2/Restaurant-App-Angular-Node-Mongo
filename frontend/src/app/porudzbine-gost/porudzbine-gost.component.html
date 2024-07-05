@@ -1,0 +1,20 @@
+<h1>Dostava hrane</h1>
+<hr>
+<br>
+<h3>Aktuelne dostave</h3>
+<table>
+    <tr *ngFor="let porudzbina of aktuelne">
+        <td>{{porudzbina.naziv_restorana}},</td>
+        <td>status - {{porudzbina.status}},</td>
+        <td>procenjeno vreme dostave - {{porudzbina.procenjeno_vreme}} min</td>
+    </tr>
+</table>
+
+<h3>Arhiva dostava</h3>
+<table>
+    <tr *ngFor="let porudzbina of arhiva">
+        <td>{{porudzbina.datum_formatiran}},</td>
+        <td>iznos - {{porudzbina.cena}} din,</td>
+        <td>{{porudzbina.naziv_restorana}},</td>
+    </tr>
+</table>

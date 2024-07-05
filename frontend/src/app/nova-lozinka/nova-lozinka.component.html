@@ -1,0 +1,26 @@
+<h1>Nova lozinka</h1>
+<hr>
+<br>
+<form>
+    <table>
+        <tr>
+            <td>Nova lozinka</td>
+            <td>
+                <input type='password' name='lozinka1' [(ngModel)]='lozinka1'>
+            </td>
+        </tr>
+        <tr>
+            <td>Ponovite lozinku</td>
+            <td>
+                <input type='password' name='lozinka2' [(ngModel)]='lozinka2'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <input type='button' value='Promeni lozinku' (click)='promeniLozinku()'>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+<div class="greske">{{this.greske}}</div>

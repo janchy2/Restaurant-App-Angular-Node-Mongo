@@ -1,0 +1,13 @@
+.star-rating {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .star-rating span {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .star-rating span.filled {
+    color: gold;
+  }

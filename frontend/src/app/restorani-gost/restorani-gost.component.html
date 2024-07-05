@@ -1,0 +1,17 @@
+<h2>Restorani</h2>
+<table>
+    <tr *ngFor="let restoran of restorani">
+        <td><a href="#" (click)="pregledRestorana(restoran, $event)">{{ restoran.naziv }}</a></td>
+        <td>{{ restoran.adresa }},</td>
+        <td>{{ restoran.tip }}</td>
+        <td>
+            <div class="star-rating">
+                <span *ngFor="let zvezdica of [1, 2, 3, 4, 5]" class="star">
+                    <span class="star-filled" [style.width.%]="sirinaZvezdice(restoran.prosecna_ocena, zvezdica)">&#9733;</span>
+                    <span class="star-empty">&#9733;</span>
+                </span>
+            </div>
+        </td>
+        <td>{{restoran.prosecna_ocena}}</td>
+    </tr>
+</table>
