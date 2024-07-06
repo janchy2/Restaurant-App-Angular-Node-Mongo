@@ -54,6 +54,6 @@ export class RestoranService {
   }
 
   dohvatiKomentare(restoranId: string) {
-    return this.http.post<string[]>(`${this.uri}/dohvatiKomentare`, { restoranId: restoranId });
+    return this.http.post<any[]>(`${this.uri}/dohvatiKomentare`, { restoranId: restoranId });
   }
 }

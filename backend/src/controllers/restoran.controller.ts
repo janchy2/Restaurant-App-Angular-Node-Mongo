@@ -114,10 +114,13 @@ export class RestoranController {
 
     dohvatiKomentare = (req: express.Request, res: express.Response) => {
         Rezervacija.find({ restoranId: ObjectId.createFromHexString(req.body.restoranId) }).then((rezervacije) => {
-            let komentari: string[] = [];
+            let komentari: any[] = [];
             rezervacije.forEach(rez => {
                 if (rez.komentar && rez.komentar != '')
-                    komentari.push(rez.komentar);
+                    komentari.push({
+                        komentar: rez.komentar,
+                        ocena: rez.ocena
+                    });
             });
             res.json(komentari);
         }).catch((err) => {

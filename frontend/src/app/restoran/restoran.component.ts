@@ -23,7 +23,7 @@ export class RestoranComponent implements OnInit {
   lon: number = 0
   nacin_rezervacije: string = ''
   korisnik: Korisnik = new Korisnik()
-  komentari: string[] = []
+  komentari: any[] = []
 
 
   ngOnInit(): void {
