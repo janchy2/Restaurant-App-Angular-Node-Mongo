@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "66893c50f4f5b2a24a22b55c"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "jela": [
+    {
+      "naziv": "Teleća čorba",
+      "cena": 220,
+      "kolicina": 2,
+      "_id": {
+        "$oid": "66893c50f4f5b2a24a22b55d"
+      }
+    },
+    {
+      "naziv": "Leskovački uštipci",
+      "cena": 870,
+      "kolicina": 1,
+      "_id": {
+        "$oid": "66893c50f4f5b2a24a22b55e"
+      }
+    }
+  ],
+  "datum": {
+    "$date": "2024-07-06T12:45:04.131Z"
+  },
+  "cena": 1310,
+  "konobar": "mika",
+  "naziv_restorana": "Blaznavac",
+  "status": "prihvaćena",
+  "procenjeno_vreme": "50-60",
+  "ime_korisnika": "pera",
+  "adresa_korisnika": "Adresa 1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893c7ff4f5b2a24a22b571"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "jela": [
+    {
+      "naziv": "Palačinke",
+      "cena": 480,
+      "kolicina": 3,
+      "_id": {
+        "$oid": "66893c7ff4f5b2a24a22b572"
+      }
+    }
+  ],
+  "datum": {
+    "$date": "2024-07-06T12:45:51.783Z"
+  },
+  "cena": 1440,
+  "konobar": "mika",
+  "naziv_restorana": "Blaznavac",
+  "status": "prihvaćena",
+  "procenjeno_vreme": "20-30",
+  "ime_korisnika": "pera",
+  "adresa_korisnika": "Adresa 1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893cbaf4f5b2a24a22b5a6"
+  },
+  "restoranId": {
+    "$oid": "66892982f04161689a69373f"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "jela": [
+    {
+      "naziv": "Leskovački uštipci",
+      "cena": 870,
+      "kolicina": 1,
+      "_id": {
+        "$oid": "66893cbaf4f5b2a24a22b5a7"
+      }
+    }
+  ],
+  "datum": {
+    "$date": "2024-07-06T12:46:50.882Z"
+  },
+  "cena": 870,
+  "konobar": "",
+  "naziv_restorana": "Vetrenjača",
+  "status": "dostavljena",
+  "procenjeno_vreme": "",
+  "ime_korisnika": "pera",
+  "adresa_korisnika": "Adresa 1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893dd339c87e7997893ad9"
+  },
+  "restoranId": {
+    "$oid": "66892a81f04161689a69376e"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "jela": [
+    {
+      "naziv": "Palačinke",
+      "cena": 480,
+      "kolicina": 2,
+      "_id": {
+        "$oid": "66893dd339c87e7997893ada"
+      }
+    },
+    {
+      "naziv": "Teleća čorba",
+      "cena": 220,
+      "kolicina": 1,
+      "_id": {
+        "$oid": "66893dd339c87e7997893adb"
+      }
+    }
+  ],
+  "datum": {
+    "$date": "2024-07-06T12:51:31.032Z"
+  },
+  "cena": 1180,
+  "konobar": "",
+  "naziv_restorana": "Monument Ruski Car",
+  "status": "dostavljena",
+  "procenjeno_vreme": "",
+  "ime_korisnika": "pera",
+  "adresa_korisnika": "Adresa 1",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893de539c87e7997893af4"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "jela": [
+    {
+      "naziv": "Leskovački uštipci",
+      "cena": 870,
+      "kolicina": 2,
+      "_id": {
+        "$oid": "66893de539c87e7997893af5"
+      }
+    }
+  ],
+  "datum": {
+    "$date": "2024-07-06T12:51:49.882Z"
+  },
+  "cena": 1740,
+  "konobar": "",
+  "naziv_restorana": "Blaznavac",
+  "status": "napravljena",
+  "procenjeno_vreme": "",
+  "ime_korisnika": "pera",
+  "adresa_korisnika": "Adresa 1",
+  "__v": 0
+}]

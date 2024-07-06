@@ -1,0 +1,272 @@
+[{
+  "_id": {
+    "$oid": "66893020f04161689a6939a9"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-07-06T12:00:00.000Z"
+  },
+  "vreme": "14:00",
+  "x_stola": 268.3999938964844,
+  "y_stola": 37.72499084472656,
+  "mesta": 2,
+  "obradjena": true,
+  "zahtevi": "Sto blizu terase.",
+  "komentar": "",
+  "ocena": 0,
+  "prihvacena": true,
+  "ispunjena": false,
+  "istekla": false,
+  "produzena": false,
+  "konobar": "mika",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-07-06",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668930f7f04161689a6939e4"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-07-06T11:30:00.000Z"
+  },
+  "vreme": "13:30",
+  "x_stola": 155.39999389648438,
+  "y_stola": 118.72499084472656,
+  "mesta": 3,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "Odlična hrana, preglasna muzika.",
+  "ocena": 4,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "mika",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-07-06",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893172f04161689a6939fe"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-07-07T11:00:00.000Z"
+  },
+  "vreme": "13:00",
+  "x_stola": 317.3999938964844,
+  "y_stola": 198.72499084472656,
+  "mesta": 1,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "",
+  "ocena": 0,
+  "prihvacena": false,
+  "ispunjena": false,
+  "istekla": false,
+  "produzena": false,
+  "konobar": "",
+  "otkazana": false,
+  "razlog": "Prezauzeta kuhinja.",
+  "formatiran_datum": "2024-07-07",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6689319af04161689a693a18"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-07-02T16:00:00.000Z"
+  },
+  "vreme": "18:00",
+  "x_stola": 30.399993896484375,
+  "y_stola": 204.72499084472656,
+  "mesta": 4,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "",
+  "ocena": 0,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "mika",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-07-02",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668931bff04161689a693a32"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-06-22T13:00:00.000Z"
+  },
+  "vreme": "15:00",
+  "x_stola": 29.399993896484375,
+  "y_stola": 119.72499084472656,
+  "mesta": 2,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "",
+  "ocena": 0,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "andrija",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-06-22",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668931dbf04161689a693a4c"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-06-25T14:00:00.000Z"
+  },
+  "vreme": "16:00",
+  "x_stola": 129.39999389648438,
+  "y_stola": 228.72499084472656,
+  "mesta": 2,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "Izvrsno!",
+  "ocena": 5,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "andrija",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-06-25",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668931f1f04161689a693a66"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-06-17T14:30:00.000Z"
+  },
+  "vreme": "16:30",
+  "x_stola": 265.3999938964844,
+  "y_stola": 123.72499084472656,
+  "mesta": 2,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "Prezačinjena hrana.",
+  "ocena": 3,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "mika",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-06-17",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66893a70f4f5b2a24a22b4a0"
+  },
+  "korisnikId": {
+    "$oid": "66891dacf04161689a693648"
+  },
+  "restoranId": {
+    "$oid": "66892862f04161689a693729"
+  },
+  "datum": {
+    "$date": "2024-07-05T09:00:00.000Z"
+  },
+  "vreme": "11:00",
+  "x_stola": 265.3999938964844,
+  "y_stola": 123.72499084472656,
+  "mesta": 2,
+  "obradjena": true,
+  "zahtevi": "",
+  "komentar": "",
+  "ocena": 0,
+  "prihvacena": true,
+  "ispunjena": true,
+  "istekla": true,
+  "produzena": false,
+  "konobar": "najdana",
+  "otkazana": false,
+  "razlog": "",
+  "formatiran_datum": "2024-07-05",
+  "ime_gosta": "pera",
+  "naziv_restorana": "Blaznavac",
+  "adresa_restorana": "Kneginje Ljubice 18, Beograd",
+  "__v": 0
+}]
