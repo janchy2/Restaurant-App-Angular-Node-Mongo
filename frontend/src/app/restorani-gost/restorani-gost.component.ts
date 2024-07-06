@@ -12,16 +12,42 @@ export class RestoraniGostComponent implements OnInit {
   constructor(private ruter: Router, private servis: RestoranService) { }
 
   restorani: Restoran[] = []
+  pretrazeni: Restoran[] = []
+  naziv: string = ''
+  tip: string = ''
+  adresa: string = ''
 
   ngOnInit() {
 
     this.servis.dohvatiSveRestorane().subscribe((restorani) => {
       this.restorani = restorani;
+      this.pretrazeni = restorani;
       this.restorani.forEach(restoran => {
         if (restoran.zbir_ocena)
           restoran.prosecna_ocena = restoran.zbir_ocena / restoran.broj_ocena;
         else restoran.prosecna_ocena = 0;
       });
+    });
+  }
+
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+  
+  pretrazi() {
+    this.pretrazeni = this.restorani.filter(restoran => {
+      let slican_naziv = true;
+      if (this.naziv) slican_naziv = restoran.naziv.toLowerCase().includes(this.naziv.toLowerCase());
+      let slican_tip = true;
+      if (this.tip) slican_tip = restoran.tip.toLowerCase().includes(this.tip.toLowerCase());
+      let slicna_adresa = true;
+      if (this.adresa) slicna_adresa = restoran.adresa.toLowerCase().includes(this.adresa.toLowerCase());
+      return slican_naziv && slican_tip && slicna_adresa;
     });
   }
 

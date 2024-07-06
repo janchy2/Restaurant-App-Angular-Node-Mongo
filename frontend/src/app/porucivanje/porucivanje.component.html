@@ -1,5 +1,18 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Jelovnik za restoran {{restoran.naziv}}</h1>
-<h4>{{restoran.adresa}}</h4>
+<h3>{{restoran.adresa}}</h3>
 <hr>
 <br>
 <button (click)="pregledKorpe()" *ngIf="pregled == false">Pregledaj korpu</button>
@@ -17,6 +30,8 @@
     </table>
     <br>
     <button (click)="zavrsi()">Završi porudžbinu</button>
+    <br>
+    <br>
     <button (click)="zatvoriPregled()">Zatvori pregled</button>
 </div>
 <table>
@@ -32,3 +47,5 @@
         <td><button (click)="dodajUKorpu(jelo)">Dodaj u korpu</button></td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

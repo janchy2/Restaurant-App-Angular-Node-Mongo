@@ -23,6 +23,7 @@ export class RestoranComponent implements OnInit {
   lon: number = 0
   nacin_rezervacije: string = ''
   korisnik: Korisnik = new Korisnik()
+  komentari: string[] = []
 
 
   ngOnInit(): void {
@@ -39,7 +40,19 @@ export class RestoranComponent implements OnInit {
     this.rezervacija.ime_gosta = this.korisnik.kor_ime;
     this.rezervacija.naziv_restorana = this.restoran.naziv;
     this.rezervacija.adresa_restorana = this.restoran.adresa;
+    this.servis1.dohvatiKomentare(this.restoran._id).subscribe((komentari) => {
+      this.komentari = komentari;
+    })
     this.centrirajAdresu(this.restoran.adresa);
+  }
+
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
   }
 
 
@@ -148,7 +161,7 @@ export class RestoranComponent implements OnInit {
           this.servis2.dodajRezervaciju(this.rezervacija).subscribe(() => {
             alert('Zahtev za rezervaciju poslat!');
             localStorage.removeItem('za_pregled');
-            this.ruter.navigate(['rezervacije-gost']);
+            this.ruter.navigate(['rezervacije_gost']);
           });
           break;
         }

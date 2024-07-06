@@ -35,7 +35,7 @@ export class PorudzbinaController {
 
     prihvati = (req: express.Request, res: express.Response) => {
         Porudzbina.findOneAndUpdate({ _id: ObjectId.createFromHexString(req.body.id) },
-            { status: 'prihvacena', konobar: req.body.konobar, procenjeno_vreme: req.body.procenjeno_vreme }).then(() => {
+            { status: 'prihvaćena', konobar: req.body.konobar, procenjeno_vreme: req.body.procenjeno_vreme }).then(() => {
                 res.json("ok");
             }).catch((err) => {
                 console.log(err);
@@ -52,7 +52,7 @@ export class PorudzbinaController {
     };
 
     dohvatiAktuelneZaGosta = (req: express.Request, res: express.Response) => {
-        Porudzbina.find({ status: 'prihvacena', korisnikId: ObjectId.createFromHexString(req.body.korisnikId) }).sort({ datum: -1 }).then((porudzbine) => {
+        Porudzbina.find({ status: 'prihvaćena', korisnikId: ObjectId.createFromHexString(req.body.korisnikId) }).sort({ datum: -1 }).then((porudzbine) => {
             res.json(porudzbine);
         }).catch((err) => {
             console.log(err);

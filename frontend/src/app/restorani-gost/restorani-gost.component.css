@@ -20,3 +20,129 @@
 .star-empty {
   color: lightgray;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  padding: 10px 0;
+}
+
+button {
+  background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav ul li button:hover {
+  background-color: #002f5a;
+}
+
+h1 {
+  color: #004080;
+  text-align: center;
+}
+
+h2 {
+  color: #004080;
+  text-align: center;
+}
+
+hr {
+  border: 1px solid #004080;
+}
+
+p {
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  padding: 12px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.greske {
+  color: red;
+  text-align: center;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #004080;
+  color: white;
+  width: 100%;
+  bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+  table {
+      padding: 10px;
+  }
+
+  table textarea {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  nav ul {
+      flex-direction: column;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+}

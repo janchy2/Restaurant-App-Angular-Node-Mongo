@@ -29,6 +29,15 @@ export class PorudzbineKonobarComponent implements OnInit {
     })
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   formatirajDatum(datum: Date): string {
     const yyyy = datum.getFullYear().toString();
     const mm = (datum.getMonth() + 1).toString().padStart(2, '0');

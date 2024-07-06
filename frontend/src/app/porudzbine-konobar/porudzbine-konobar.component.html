@@ -1,10 +1,31 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Dostave</h1>
 <hr>
 <br>
 <table>
+    <tr>
+        <th>Ime gosta</th>
+        <th>Adresa gosta</th>
+        <th>Datum i vreme</th>
+        <th>Jela</th>
+        <th>Iznos</th>
+        <th colspan="4">Obradi</th>
+    </tr>
     <tr *ngFor="let porudzbina of porudzbine">
-    <td>{{porudzbina.ime_korisnika}},</td>
-    <td>{{porudzbina.adresa_korisnika}},</td>
+    <td>{{porudzbina.ime_korisnika}}</td>
+    <td>{{porudzbina.adresa_korisnika}}</td>
     <td>{{porudzbina.datum_formatiran}}</td>
     <td>
         <ul *ngFor="let jelo of porudzbina.jela">
@@ -13,7 +34,7 @@
             </li>
         </ul>
     </td>
-    <td>ukupno - {{porudzbina.cena}} din</td>
+    <td>{{porudzbina.cena}} din</td>
     <td><button (click)="prihvati(porudzbina)">Prihvati</button></td>
     <td><button (click)="odbij(porudzbina)">Odbij</button></td>
     <td *ngIf="porudzbina.za_prihvatanje"> Procenjeno vreme dostave
@@ -26,3 +47,5 @@
     <td *ngIf="porudzbina.za_prihvatanje"><button (click)="potvrdi(porudzbina)">Potvrdi</button></td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

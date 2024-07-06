@@ -30,6 +30,15 @@ export class DodavanjeRestoranaComponent implements OnInit {
     }
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   klikNaKanvas(event: MouseEvent) {
     const rect = this.canvas?.getBoundingClientRect();
     if (rect) {

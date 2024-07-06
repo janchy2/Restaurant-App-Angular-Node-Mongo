@@ -1,11 +1,139 @@
-.map-container {
-    width: 100%; 
-    height: 400px; 
-    max-width: 800px; 
-    border: 1px solid #ccc; 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #004080;
+  text-align: center;
+}
+
+h3 {
+  color: #004080;
+}
+
+hr {
+  border: 1px solid #004080;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="button"] {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table td,
+table th {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+p {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.greske {
+  color: red;
+  text-align: center;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #004080;
+  color: white;
+  width: 100%;
+  bottom: 0;
+}
+
+header {
+  background-color: #004080;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav ul li button:hover {
+  background-color: #002f5a;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5em;
   }
-  
-  div[leaflet] {
+
+  table {
     width: 100%;
-    height: 100%;
   }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}

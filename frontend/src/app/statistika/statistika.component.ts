@@ -53,7 +53,7 @@ export class StatistikaComponent implements OnInit {
 
   histogramChartOptions: Highcharts.Options = {
     chart: {
-      type: 'bar'
+      type: 'column'
     },
     title: {
       text: 'Prosečan broj rezervacija po danu u nedelji za sve restorane'
@@ -71,7 +71,7 @@ export class StatistikaComponent implements OnInit {
     },
     series: [{
       name: 'Prosečan broj rezervacija',
-      type: 'bar',
+      type: 'column',
       data: []
     }]
   };
@@ -86,6 +86,15 @@ export class StatistikaComponent implements OnInit {
     this.statistika1();
     this.statistika2();
     this.statistika3();
+  }
+
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
   }
 
   statistika1() {
@@ -119,13 +128,12 @@ export class StatistikaComponent implements OnInit {
 
   statistika3() {
     this.servis.statistika3().subscribe((statistika) => {
-      const data = statistika.map(dan => ({
-        y: dan.prosek,
-        name: dan.dan
-      }));
-  
+      const categories = statistika.map(dan => dan.dan);
+      const data = statistika.map(dan => dan.prosek);
+
+      (this.histogramChartOptions.xAxis as Highcharts.XAxisOptions).categories = categories;
       if (this.histogramChartOptions.series) {
-        (this.histogramChartOptions.series[0] as Highcharts.SeriesBarOptions).data = data;
+        (this.histogramChartOptions.series[0] as Highcharts.SeriesColumnOptions).data = data;
       }
 
       Highcharts.chart('histogramContainer', this.histogramChartOptions);

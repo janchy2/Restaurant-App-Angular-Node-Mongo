@@ -28,6 +28,15 @@ export class PorudzbineGostComponent implements OnInit {
     })
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   gost: Korisnik = new Korisnik()
   aktuelne: Porudzbina[] = []
   arhiva: Porudzbina[] = []

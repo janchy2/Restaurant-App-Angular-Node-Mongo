@@ -17,5 +17,6 @@ restoranRouter.route("/dohvatiBrojRestorana").get((req, res) => new RestoranCont
 
 restoranRouter.route("/dohvatiRestoraneSaKonobarima").get((req, res) => new RestoranController().dohvatiRestoraneSaKonobarima(req, res))
 
+restoranRouter.route("/dohvatiKomentare").post((req, res) => new RestoranController().dohvatiKomentare(req, res))
 
 export default restoranRouter;

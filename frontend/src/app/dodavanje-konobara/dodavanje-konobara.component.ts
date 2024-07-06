@@ -36,6 +36,15 @@ export class DodavanjeKonobaraComponent implements OnInit {
     })
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   unetaSlika(event: any) {
     let file = event.target.files[0];
     let reader = new FileReader();

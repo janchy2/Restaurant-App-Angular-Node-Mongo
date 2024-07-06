@@ -20,7 +20,19 @@
                 <input type='button' value='Prijavi se' (click)='prijava()'>
             </td>
         </tr>
+        <tr>
+            <td colspan='2'>
+                <a href="#" (click)="zaboravljenaLozinka($event)">Zaboravljena lozinka?</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+                <a href="#" (click)="registrujSe($event)">Registruj se</a>
+            </td>
+        </tr>
     </table>
 </form>
 <hr>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

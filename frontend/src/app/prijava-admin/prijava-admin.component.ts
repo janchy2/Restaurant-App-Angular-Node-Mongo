@@ -15,6 +15,11 @@ export class PrijavaAdminComponent {
   lozinka: string = ''
   greske: string = ''
 
+  zaboravljenaLozinka(event: Event) {
+    event.preventDefault();
+    this.ruter.navigate(['promena_lozinke']);
+  }
+  
   prijava() {
     this.greske = '';
 

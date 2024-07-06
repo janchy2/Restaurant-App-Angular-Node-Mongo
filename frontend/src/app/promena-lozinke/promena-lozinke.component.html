@@ -1,7 +1,45 @@
+<header *ngIf="korisnik.tip == 'A' && ulogovan">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'G' && ulogovan">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'K' && ulogovan">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Promena lozinke</h1>
 <hr>
 <br>
-<form *ngIf="ulogovan == true">
+<form *ngIf="zaboravljena == false">
     <table>
         <tr>
             <td>Stara lozinka</td>
@@ -21,7 +59,7 @@
         </tr>
     </table>
 </form>
-<form *ngIf="ulogovan == false">
+<form *ngIf="zaboravljena == true">
     <table>
         <tr *ngIf="dobro_ime == false">
             <td>Korisničko ime</td>
@@ -50,3 +88,5 @@
 </form>
 <hr>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

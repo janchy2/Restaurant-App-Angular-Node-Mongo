@@ -46,6 +46,15 @@ export class RezervacijaPanelComponent implements OnInit {
     this.nacrtajRaspored();
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   nacrtajRaspored() {
     if (this.ctx) {
       this.ctx.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
@@ -164,7 +173,7 @@ export class RezervacijaPanelComponent implements OnInit {
       localStorage.removeItem('stolovi');
       localStorage.removeItem('rezervacija_trenutna');
       localStorage.removeItem('za_pregled');
-      this.ruter.navigate(['rezervacije-gost'])
+      this.ruter.navigate(['rezervacije_gost']);
     });
   }
 }

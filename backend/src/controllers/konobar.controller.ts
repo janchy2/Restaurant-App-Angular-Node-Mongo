@@ -23,7 +23,8 @@ export class KonobarController {
       mejl: req.body.mejl,
       restoran: ObjectId.createFromHexString(req.body.restoran),
       tip: req.body.tip,
-      slika: req.body.slika
+      slika: req.body.slika,
+      aktivan: true
     }
     new Korisnik(konobar).save().then(ok => {
       res.json({ message: "ok" })

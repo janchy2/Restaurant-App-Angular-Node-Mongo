@@ -1,6 +1,47 @@
-<h2>Restorani</h2>
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Restorani</h1>
+<hr>
+<br>
 <table>
-    <tr *ngFor="let restoran of restorani">
+    <tr>
+        <td>Pretraži</td>
+        <td>po nazivu</td>
+        <td>
+            <input type="text" [(ngModel)]="naziv" name="naziv">
+        </td>
+        <td>i/ili adresi</td>
+        <td>
+            <input type="text" [(ngModel)]="adresa" name="adresa">
+        </td>
+        <td>i/ili tipu</td>
+        <td>
+            <input type="text" [(ngModel)]="tip" name="tip">
+        </td>
+        <td>
+            <button (click)="pretrazi()">Pretraži</button>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Naziv</th>
+        <th>Tip</th>
+        <th>Adresa</th>
+        <th colspan="2">Ocena</th>
+    </tr>
+    <tr *ngFor="let restoran of pretrazeni">
         <td><a href="#" (click)="pregledRestorana(restoran, $event)">{{ restoran.naziv }}</a></td>
         <td>{{ restoran.adresa }},</td>
         <td>{{ restoran.tip }}</td>
@@ -15,3 +56,5 @@
         <td>{{restoran.prosecna_ocena}}</td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

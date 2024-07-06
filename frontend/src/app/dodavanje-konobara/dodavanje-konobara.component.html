@@ -1,3 +1,16 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Novi konobar</h1>
 <hr>
 <br>
@@ -93,3 +106,5 @@
 </form>
 <hr>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

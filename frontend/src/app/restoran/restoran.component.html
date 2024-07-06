@@ -1,3 +1,41 @@
+<header *ngIf="korisnik.tip == 'A'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'G'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'K'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Pregled restorana</h1>
 <hr>
 <br>
@@ -30,6 +68,14 @@
         <td>Kontakt osoba</td>
         <td>
             {{restoran.kontakt_osoba}}
+        </td>
+    </tr>
+    <tr>
+        <td>Komentari</td>
+        <td>
+            <ul *ngFor="let komentar of komentari">
+                <li>{{komentar}}</li>
+            </ul>
         </td>
     </tr>
 </table>
@@ -79,14 +125,16 @@
             </tr>
             <tr>
                 <td colspan='2'>
-                    <input type='button' value='Dalje' (click)='izabranDatum()'>
+                    <button (click)='izabranDatum()'>Dalje</button>
                 </td>
             </tr>
         </table>
     </div>
 </div>
 <div *ngIf="korisnik.tip == 'G'">
-<h3>Pregledaj jelovnik i naruči na kućnu adresu</h3>
-<button (click)="jelovnik()">Otvori jelovnik</button>
+    <h3>Pregledaj jelovnik i naruči na kućnu adresu</h3>
+    <button (click)="jelovnik()">Otvori jelovnik</button>
 </div>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

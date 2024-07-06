@@ -30,9 +30,20 @@ export class RezervacijeKonobarComponent implements OnInit {
         this.obradjene = obradjene;
         this.obradjene.forEach(rez => {
           rez.pola_sata = (new Date().getTime() - new Date(rez.datum).getTime() >= 30 * 60 * 1000);
+          rez.moze_produzivanje = new Date().getTime() - new Date(rez.datum).getTime() < 3 * 60 * 60 * 1000
+            && new Date().getDate() == new Date(rez.datum).getDate();
         });
       });
     });
+  }
+
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
   }
 
   obradi(r: Rezervacija) {

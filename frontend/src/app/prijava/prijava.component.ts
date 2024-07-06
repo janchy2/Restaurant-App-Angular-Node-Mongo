@@ -15,6 +15,16 @@ export class PrijavaComponent {
   lozinka: string = ''
   greske: string = ''
 
+  zaboravljenaLozinka(event: Event) {
+    event.preventDefault();
+    this.ruter.navigate(['promena_lozinke']);
+  }
+
+  registrujSe(event: Event) {
+    event.preventDefault();
+    this.ruter.navigate(['registracija']);
+  }
+
   prijava() {
     this.greske = '';
 

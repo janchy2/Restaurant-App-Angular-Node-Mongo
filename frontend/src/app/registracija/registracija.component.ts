@@ -12,7 +12,7 @@ export class RegistracijaComponent {
 
   constructor(private ruter: Router, private servis: KorisnikService) { }
 
-  
+
   sadrzajSlike: string | ArrayBuffer | null = null
   kor_ime: string = ''
   lozinka: string = ''
@@ -27,6 +27,11 @@ export class RegistracijaComponent {
   mejl: string = ''
   broj_kartice: string = ''
   greske: string = ''
+
+  prijaviSe(event: Event) {
+    event.preventDefault();
+    this.ruter.navigate(['prijava']);
+  }
 
   unetaSlika(event: any) {
     let file = event.target.files[0];
@@ -170,8 +175,8 @@ export class RegistracijaComponent {
     gost.tip = 'G';
 
     this.servis.registracijaGosta(gost).subscribe(() => {
-      localStorage.setItem("ulogovan", JSON.stringify(gost));
-      this.ruter.navigate(['profil']);
+      alert('Zahtev za registraciju poslat!');
+      this.ruter.navigate(['']);
     })
 
   }

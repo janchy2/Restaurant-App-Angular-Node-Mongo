@@ -40,6 +40,15 @@ export class ProfilComponent {
     }
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   za_azuriranje: string = ''
   za_azuriranje_poruka: string = ''
   greske: string = ''

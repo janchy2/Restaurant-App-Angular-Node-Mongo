@@ -90,7 +90,7 @@ export class RezervacijaController {
     };
 
     dohvatiNeobradjene = (req: express.Request, res: express.Response) => {
-        Rezervacija.find({ obradjena: false, restoranId: ObjectId.createFromHexString(req.body.restoranId) }).sort({ datum: -1 }).then((rezervacije) => {
+        Rezervacija.find({ obradjena: false, restoranId: ObjectId.createFromHexString(req.body.restoranId) }).sort({ datum: 1 }).then((rezervacije) => {
             res.json(rezervacije);
         }).catch((err) => {
             console.log(err);

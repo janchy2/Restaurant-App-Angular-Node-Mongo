@@ -1,8 +1,27 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Pregled gostiju, konobara i restorana</h1>
 <hr>
 <br>
 <h2>Gosti</h2>
+<br>
 <table>
+    <tr>
+        <th>Korisničko ime</th>
+        <th>Pregled</th>
+        <th>Deaktiviraj/Odblokiraj</th>
+    </tr>
     <tr *ngFor="let gost of gosti">
         <td>{{ gost.kor_ime }}</td>
         <td><button (click)="pregled(gost)">Pregled</button></td>
@@ -10,23 +29,38 @@
         <td *ngIf="gost.aktivan == false"><button (click)="odblokiraj(gost)">Odblokiraj</button></td>
     </tr>
 </table>
-
+<br>
 <h2>Konobari</h2>
+<br>
 <table>
+    <tr>
+        <th>Korisničko ime</th>
+        <th>Pregled</th>
+        <th>Deaktiviraj/Odblokiraj</th>
+    </tr>
     <tr *ngFor="let konobar of konobari">
         <td>{{ konobar.kor_ime }}</td>
         <td><button (click)="pregled(konobar)">Pregled</button></td>
-        <td><button (click)="deaktiviraj(konobar)">Deaktiviraj</button></td>
-        <td><button (click)="odblokiraj(konobar)">Odblokiraj</button></td>
+        <td *ngIf="konobar.aktivan == true"><button (click)="deaktiviraj(konobar)">Deaktiviraj</button></td>
+        <td *ngIf="konobar.aktivan == false"><button (click)="odblokiraj(konobar)">Odblokiraj</button></td>
     </tr>
 </table>
-
+<br>
 <h2>Restorani</h2>
+<br>
 <table>
+    <tr>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Pregled</th>
+        <th colspan="2">Radno vreme</th>
+    </tr>
     <tr *ngFor="let restoran of restorani">
         <td>{{ restoran.naziv }}</td>
+        <td>{{ restoran.adresa }}</td>
         <td><button (click)="pregledRestorana(restoran)">Pregled</button></td>
-        <td *ngIf="!restoran.radno_vreme"><button (click)="otvoriFormu(restoran)">Dodaj radno vreme kuhinje</button>
+        <td *ngIf="!restoran.radno_vreme">
+            <button (click)="otvoriFormu(restoran)">Dodaj radno vreme kuhinje</button>
         </td>
         <td *ngIf="restoran.dodaj_vreme">
             <table>
@@ -46,3 +80,5 @@
         </td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

@@ -1,26 +1,55 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Rezervacije</h1>
 <hr>
 <br>
 <h2>Neobrađene rezervacije</h2>
 <table>
+    <tr>
+        <th>Gost</th>
+        <th>Datum</th>
+        <th>Vreme</th>
+        <th>Broj osoba</th>
+        <th>Obradi</th>
+    </tr>
     <tr *ngFor="let rezervacija of neobradjene">
-        <td>{{ rezervacija.ime_gosta }},</td>
-        <td>{{ rezervacija.formatiran_datum }},</td>
-        <td>{{ rezervacija.vreme }},</td>
-        <td>osoba - {{ rezervacija.mesta }}</td>
+        <td>{{ rezervacija.ime_gosta }}</td>
+        <td>{{ rezervacija.formatiran_datum }}</td>
+        <td>{{ rezervacija.vreme }}</td>
+        <td>{{ rezervacija.mesta }}</td>
         <td><button (click)="obradi(rezervacija)">Obradi</button></td>
     </tr>
 </table>
 
 <h2>Moje prihvaćene rezervacije</h2>
 <table>
+    <tr>
+        <th>Gost</th>
+        <th>Datum</th>
+        <th>Vreme</th>
+        <th>Broj osoba</th>
+        <th colspan="2">Obradi</th>
+    </tr>
     <tr *ngFor="let rezervacija of obradjene">
-        <td>{{ rezervacija.ime_gosta }},</td>
-        <td>{{ rezervacija.formatiran_datum }},</td>
-        <td>{{ rezervacija.vreme }},</td>
-        <td>osoba - {{ rezervacija.mesta }}</td>
+        <td>{{ rezervacija.ime_gosta }}</td>
+        <td>{{ rezervacija.formatiran_datum }}</td>
+        <td>{{ rezervacija.vreme }}</td>
+        <td>{{ rezervacija.mesta }}</td>
         <td *ngIf="rezervacija.istekla == false && rezervacija.pola_sata == true"><button (click)="dosli(rezervacija)">Došli</button></td>
         <td *ngIf="rezervacija.istekla == false && rezervacija.pola_sata == true"><button (click)="nisuDosli(rezervacija)">Nisu došli</button></td>
-        <td *ngIf="rezervacija.ispunjena == true && rezervacija.produzena == false"><button (click)="produzi(rezervacija)">Produži</button></td>
+        <td *ngIf="rezervacija.ispunjena == true && rezervacija.produzena == false && rezervacija.moze_produzivanje == true"><button (click)="produzi(rezervacija)">Produži</button></td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

@@ -1,13 +1,213 @@
 .star-rating {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+.star-rating span {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.star-rating span.filled {
+  color: gold;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+nav ul li button:hover {
+  background-color: #002f5a;
+}
+
+h1 {
+  color: #004080;
+  text-align: center;
+}
+
+h2 {
+  color: #004080;
+}
+
+hr {
+  border: 1px solid #004080;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  padding: 12px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+form td {
+  padding: 8px;
+  vertical-align: top;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="file"],
+form select {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form input[type="radio"] {
+  margin-right: 8px;
+}
+
+form input[type="button"] {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+form input[type="button"]:hover {
+  background-color: #002f5a;
+}
+
+.greske {
+  color: red;
+  text-align: center;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #004080;
+  color: white;
+  width: 100%;
+  bottom: 0;
+}
+
+button {
+  background-color: #004080;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5em;
   }
-  
-  .star-rating span {
-    font-size: 2rem;
-    cursor: pointer;
+
+  form {
+    padding: 10px;
   }
-  
-  .star-rating span.filled {
-    color: gold;
+
+  form td {
+    display: block;
+    width: 100%;
   }
+
+  form td:first-child {
+    font-weight: bold;
+    padding-top: 10px;
+  }
+
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="tel"],
+  form input[type="email"],
+  form input[type="file"],
+  form select,
+  form input[type="radio"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  table {
+    padding: 10px;
+}
+}

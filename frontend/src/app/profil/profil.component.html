@@ -1,3 +1,41 @@
+<header *ngIf="korisnik.tip == 'A'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'G'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
+<header *ngIf="korisnik.tip == 'K'">
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1 *ngIf="admin_pregled == false">Moj profil</h1>
 <h1 *ngIf="admin_pregled == true">Pregled korisnika</h1>
 <hr>
@@ -62,7 +100,7 @@
     <img [src]="korisnik.slika">
 </div>
 <p><input type="button" value="Ažuriraj profilnu" (click)="azurirajProfilnu()"></p>
-<hr>
+
 <table *ngIf="za_azuriranje_poruka != ''">
     <tr>
         <td>Unesite {{za_azuriranje_poruka}}</td>
@@ -93,3 +131,5 @@
 </table>
 <hr>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

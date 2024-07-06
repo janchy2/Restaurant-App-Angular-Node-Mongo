@@ -1,12 +1,32 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Moje rezervacije</h1>
 <hr>
 <br>
 <h2>Aktuelne rezervacije</h2>
 <table>
+    <tr>
+        <th>Datum</th>
+        <th>Vreme</th>
+        <th>Naziv restorana</th>
+        <th>Adresa restorana</th>
+        <th>Otkaži</th>
+    </tr>
     <tr *ngFor="let rezervacija of aktuelne">
-        <td>{{ rezervacija.formatiran_datum }},</td>
-        <td>{{ rezervacija.vreme }},</td>
-        <td>{{rezervacija.naziv_restorana}},</td>
+        <td>{{ rezervacija.formatiran_datum }}</td>
+        <td>{{ rezervacija.vreme }}</td>
+        <td>{{rezervacija.naziv_restorana}}</td>
         <td>{{rezervacija.adresa_restorana}}</td>
         <td *ngIf="rezervacija.moze_otkazivanje"><button (click)="otkazi(rezervacija)">Otkaži</button></td>
     </tr>
@@ -14,12 +34,19 @@
 
 <h2>Istekle rezervacije</h2>
 <table>
+    <tr>
+        <th>Datum</th>
+        <th>Vreme</th>
+        <th>Naziv restorana</th>
+        <th>Ocena</th>
+        <th>Komentar</th>
+    </tr>
     <tr *ngFor="let rezervacija of istekle">
-        <td>{{ rezervacija.formatiran_datum }},</td>
-        <td>{{ rezervacija.vreme }},</td>
+        <td>{{ rezervacija.formatiran_datum }}</td>
+        <td>{{ rezervacija.vreme }}</td>
         <td>{{rezervacija.naziv_restorana}}</td>
-        <td *ngIf="rezervacija.ocena > 0">ocena - {{rezervacija.ocena}}</td>
-        <td *ngIf="rezervacija.komentar != ''">komentar - {{rezervacija.komentar}}</td>
+        <td *ngIf="rezervacija.ocena > 0">{{rezervacija.ocena}}</td>
+        <td *ngIf="rezervacija.komentar != ''">{{rezervacija.komentar}}</td>
         <td *ngIf="rezervacija.ocena == 0 && rezervacija.ispunjena == true"><button
                 (click)="oceni(rezervacija)">Oceni</button></td>
         <td *ngIf="rezervacija.za_ocenjivanje == true">
@@ -34,3 +61,5 @@
         </td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

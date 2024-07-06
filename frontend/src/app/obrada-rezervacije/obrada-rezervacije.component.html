@@ -1,3 +1,16 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('rezervacije_konobar')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_konobar')">Dostave</button></li>
+            <li><button (click)="predjiNa('statistika')">Statistika</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h2>Obrada rezervacije</h2>
 <p *ngIf="rezervacija.x_stola != 0 && rezervacija.y_stola != 0">Željeni sto je žute boje (narandžaste ako već postoji rezervacija za njega) </p>
 <p *ngIf="rezervacija.x_stola == 0 && rezervacija.y_stola == 0">Izaberite sto preko panela (beli su slobodni) </p>
@@ -28,3 +41,5 @@
     </tr>
 </table>
 <div class="greske">{{this.greske}}</div>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

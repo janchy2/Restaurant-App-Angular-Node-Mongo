@@ -1,5 +1,6 @@
 import * as express from "express";
 import Restoran from "../models/restoran";
+import Rezervacija from "../models/rezervacija";
 import { ObjectId } from "mongodb";
 
 export class RestoranController {
@@ -13,7 +14,7 @@ export class RestoranController {
             mejl: req.body.mejl,
             tip: req.body.tip,
             raspored: req.body.raspored,
-            radnoVreme: '',
+            radno_vreme: '',
             zbir_ocena: 0,
             broj_ocena: 0,
             jelovnik: req.body.jelovnik
@@ -110,4 +111,17 @@ export class RestoranController {
 
         res.json(rezultat);
     };
+
+    dohvatiKomentare = (req: express.Request, res: express.Response) => {
+        Rezervacija.find({ restoranId: ObjectId.createFromHexString(req.body.restoranId) }).then((rezervacije) => {
+            let komentari: string[] = [];
+            rezervacije.forEach(rez => {
+                if (rez.komentar && rez.komentar != '')
+                    komentari.push(rez.komentar);
+            });
+            res.json(komentari);
+        }).catch((err) => {
+            console.log(err);
+        });
+    }
 }

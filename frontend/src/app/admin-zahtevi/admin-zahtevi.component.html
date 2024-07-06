@@ -1,8 +1,27 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('admin/pregled')">Pregled gostiju, konobara i restorana</button></li>
+            <li><button (click)="predjiNa('admin/zahtevi')">Zahtevi za nalozima</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_restorana')">Novi restoran</button></li>
+            <li><button (click)="predjiNa('admin/dodavanje_konobara')">Novi konobar</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Zahtevi za registraciju gostiju</h1>
 <hr>
 <br>
 <h2 *ngIf="ima_zahteva == true">Nepregledani zahtevi</h2>
 <table *ngIf="ima_zahteva == true">
+    <tr>
+        <th>Korisničko ime</th>
+        <th>Pregled</th>
+        <th>Prihvati</th>
+        <th>Odbij</th>
+    </tr>
     <tr *ngFor="let gost of gosti">
         <td>{{ gost.kor_ime }}</td>
         <td><button (click)="pregled(gost)">Pregled</button></td>
@@ -11,3 +30,5 @@
     </tr>
 </table>
 <p *ngIf="ima_zahteva == false">Trenutno nema nepregledanih zahteva!</p>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

@@ -25,4 +25,5 @@ export class Rezervacija {
     adresa_restorana: string = ''
     moze_otkazivanje: boolean = false
     za_ocenjivanje: boolean = false
+    moze_produzivanje: boolean = false
 }

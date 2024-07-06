@@ -1,20 +1,45 @@
+<header>
+    <nav>
+        <ul>
+            <li><button (click)="predjiNa('profil')">Profil</button></li>
+            <li><button (click)="predjiNa('restorani_gost')">Restorani</button></li>
+            <li><button (click)="predjiNa('rezervacije_gost')">Rezervacije</button></li>
+            <li><button (click)="predjiNa('porudzbine_gost')">Dostava hrane</button></li>
+            <li><button (click)="predjiNa('promena_lozinke')">Promena lozinke</button></li>
+            <li><button (click)="izloguj()">Izloguj se</button></li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Dostava hrane</h1>
 <hr>
 <br>
-<h3>Aktuelne dostave</h3>
+<h2>Aktuelne dostave</h2>
 <table>
+    <tr>
+        <th>Restoran</th>
+        <th>Status</th>
+        <th>Procenjeno vreme dostave</th>
+    </tr>
     <tr *ngFor="let porudzbina of aktuelne">
-        <td>{{porudzbina.naziv_restorana}},</td>
-        <td>status - {{porudzbina.status}},</td>
-        <td>procenjeno vreme dostave - {{porudzbina.procenjeno_vreme}} min</td>
+        <td>{{porudzbina.naziv_restorana}}</td>
+        <td>{{porudzbina.status}}</td>
+        <td>{{porudzbina.procenjeno_vreme}} min</td>
     </tr>
 </table>
 
-<h3>Arhiva dostava</h3>
+<h2>Arhiva dostava</h2>
 <table>
+    <tr>
+        <th>Datum</th>
+        <th>Iznos</th>
+        <th>Restoran</th>
+    </tr>
     <tr *ngFor="let porudzbina of arhiva">
-        <td>{{porudzbina.datum_formatiran}},</td>
-        <td>iznos - {{porudzbina.cena}} din,</td>
-        <td>{{porudzbina.naziv_restorana}},</td>
+        <td>{{porudzbina.datum_formatiran}}</td>
+        <td>{{porudzbina.cena}} din</td>
+        <td>{{porudzbina.naziv_restorana}}</td>
     </tr>
 </table>
+
+<footer>Kutak dobre hrane - Programiranje internet aplikacija 2024.</footer>

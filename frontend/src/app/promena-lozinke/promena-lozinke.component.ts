@@ -19,13 +19,27 @@ export class PromenaLozinkeComponent {
   dobro_ime: boolean = false
   ulogovan: boolean = false
   greske: string = ''
+  zaboravljena: boolean = false;
 
   ngOnInit() {
     let ulogovan = localStorage.getItem('ulogovan');
     if (ulogovan) {
       this.ulogovan = true;
-      this.kor_ime = JSON.parse(ulogovan).kor_ime;
+      this.korisnik = JSON.parse(ulogovan);
+      this.kor_ime = this.korisnik.kor_ime;
     }
+    else {
+      this.zaboravljena = true;
+    }
+  }
+
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
   }
 
   daljeZnam() {
@@ -42,9 +56,7 @@ export class PromenaLozinkeComponent {
 
   zaboravljenaLozinka(event: Event) {
     event.preventDefault();
-    localStorage.removeItem('ulogovan');
-    this.ulogovan = false;
-    this.korisnik = new Korisnik();
+    this.zaboravljena = true;
     this.greske = ''
   }
 
@@ -52,9 +64,12 @@ export class PromenaLozinkeComponent {
     this.greske = '';
     if (!this.dobro_ime) {
       this.servis.dohvatiPoKorImenu(this.kor_ime).subscribe((korisnik) => {
-        if (korisnik) {
+        if (korisnik && korisnik.aktivan) {
           this.korisnik = korisnik;
           this.dobro_ime = true;
+        }
+        else if(korisnik && !korisnik.aktivan) {
+          this.greske = 'Vaš nalog još uvek nije prihvaćen ili nije aktivan!';
         }
         else {
           this.greske = 'Korisničko ime ne postoji!';

@@ -52,6 +52,15 @@ export class ObradaRezervacijeComponent {
     this.nacrtajRaspored();
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   nacrtajRaspored() {
     if (this.ctx) {
       this.ctx.clearRect(0, 0, this.canvas!.width, this.canvas!.height);

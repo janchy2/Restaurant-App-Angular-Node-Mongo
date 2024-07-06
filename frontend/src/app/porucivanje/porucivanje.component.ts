@@ -30,6 +30,15 @@ export class PorucivanjeComponent implements OnInit {
     }
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   dodajUKorpu(j: Jelo) {
     if (!j.kolicina || j.kolicina <= 0) {
       alert('Niste uneli dobru količinu!');
@@ -90,7 +99,7 @@ export class PorucivanjeComponent implements OnInit {
     this.porudzbina.naziv_restorana = this.restoran.naziv;
     this.servis.dodajPorudzbinu(this.porudzbina).subscribe(() => {
       alert('Porudžbina poslata!');
-      this.ruter.navigate(['restorani_gost']);
+      this.ruter.navigate(['porudzbine_gost']);
     })
   }
 

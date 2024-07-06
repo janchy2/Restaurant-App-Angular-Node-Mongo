@@ -52,4 +52,8 @@ export class RestoranService {
   dohvatiRestoraneSaKonobarima() {
     return this.http.get<any[]>(`${this.uri}/dohvatiRestoraneSaKonobarima`);
   }
+
+  dohvatiKomentare(restoranId: string) {
+    return this.http.post<string[]>(`${this.uri}/dohvatiKomentare`, { restoranId: restoranId });
+  }
 }

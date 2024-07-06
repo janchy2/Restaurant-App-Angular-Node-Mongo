@@ -39,6 +39,15 @@ export class AdminPregledComponent implements OnInit {
     });
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   pregled(k: Korisnik) {
     localStorage.setItem('za_pregled', JSON.stringify(k));
     this.ruter.navigate(['profil']);
@@ -46,12 +55,14 @@ export class AdminPregledComponent implements OnInit {
 
   deaktiviraj(k: Korisnik) {
     this.servisK.deaktivirajKorisnika(k.kor_ime).subscribe(() => {
+      alert('Korisnik deaktiviran!');
       this.ngOnInit();
     })
   }
 
   odblokiraj(k: Korisnik) {
     this.servisK.odblokirajKorisnika(k.kor_ime).subscribe(() => {
+      alert('Korisnik odblokiran!');
       this.ngOnInit();
     })
   }
@@ -75,6 +86,7 @@ export class AdminPregledComponent implements OnInit {
     }).join(', ');
 
     this.servisR.dodajRadnoVreme(r.naziv, r.adresa, radno_vreme).subscribe(() => {
+      alert('Radno vreme dodato!');
       this.ngOnInit();
     })
 

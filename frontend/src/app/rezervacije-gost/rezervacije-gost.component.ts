@@ -35,6 +35,15 @@ export class RezervacijeGostComponent {
     });
   }
 
+  predjiNa(putanja: string) {
+    this.ruter.navigate([putanja]);
+  }
+
+  izloguj() {
+    localStorage.removeItem('ulogovan');
+    this.ruter.navigate(['']);
+  }
+
   otkazi(r: Rezervacija) {
     this.servis1.otkazi(r._id).subscribe(() => {
       alert('Rezervacija otkazana!');
