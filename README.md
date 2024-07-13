@@ -9,5 +9,7 @@ For frontend:<br>
 For backend:<br>
 - npm install --force<br>
 - tsc<br>
-- npm run serve
-The app will be running on localhost:4200.
+- npm run serve<br>
+<br>
+The app will be running on localhost:4200.<br>
+The exported database is given in the folder baza.
